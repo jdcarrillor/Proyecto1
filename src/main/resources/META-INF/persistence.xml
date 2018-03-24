@@ -8,6 +8,7 @@
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.MeasurementEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.ConsolidatedDataEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.RealTimeDataEntity</class>
+        <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.AdministradorEntity</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.connection.autocommit" value="true" />
@@ -35,6 +36,7 @@
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.MeasurementEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.ConsolidatedDataEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.RealTimeDataEntity</class>
+        <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.AdministradorEntity</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="kundera.nodes" value="localhost"/>

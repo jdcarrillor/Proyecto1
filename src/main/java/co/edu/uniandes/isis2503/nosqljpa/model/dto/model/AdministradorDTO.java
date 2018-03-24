@@ -23,8 +23,6 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.model.dto.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
