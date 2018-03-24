@@ -100,6 +100,4 @@ public class CentralYaleEntity implements Serializable
         this.unidadesResidenciales = unidadesResidenciales;
     }
     
-    
-    
 }

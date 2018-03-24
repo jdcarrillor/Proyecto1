@@ -23,12 +23,12 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.service;
 
-import co.edu.uniandes.isis2503.nosqljpa.interfaces.IPropietarioLogic;
-import co.edu.uniandes.isis2503.nosqljpa.interfaces.IResidenciaLogic;
-import co.edu.uniandes.isis2503.nosqljpa.logic.PropietarioLogic;
-import co.edu.uniandes.isis2503.nosqljpa.logic.ResidenciaLogic;
-import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.PropietarioDTO;
-import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.ResidenciaDTO;
+import co.edu.uniandes.isis2503.nosqljpa.interfaces.ICentralYaleLogic;
+import co.edu.uniandes.isis2503.nosqljpa.interfaces.IUnidadResidencialLogic;
+import co.edu.uniandes.isis2503.nosqljpa.logic.CentralYaleLogic;
+import co.edu.uniandes.isis2503.nosqljpa.logic.UnidadResidencialLogic;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.CentralYaleDTO;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.UnidadResidencialDTO;
 import com.sun.istack.logging.Logger;
 import java.util.List;
 import java.util.logging.Level;
@@ -46,59 +46,58 @@ import javax.ws.rs.core.Response;
  *
  * @author m.sicard10
  */
-@Path("/propietario")
+@Path("/centralYale")
 @Produces(MediaType.APPLICATION_JSON)
-public class PropietarioService {
+public class CentralYaleService {
+   
+    private final ICentralYaleLogic centralYaleLogic;
+    private final IUnidadResidencialLogic unidadesLogic;
 
-    private final IPropietarioLogic propietarioLogic;
-    private final IResidenciaLogic residenciaLogic; 
-
-    public PropietarioService() {
-        this.propietarioLogic = new PropietarioLogic();
-        this.residenciaLogic = new ResidenciaLogic(); 
+    public CentralYaleService() {
+        this.centralYaleLogic = new CentralYaleLogic();
+        this.unidadesLogic = new UnidadResidencialLogic();
     }
 
     @POST
-    public PropietarioDTO add(PropietarioDTO dto) {
-        return propietarioLogic.add(dto);
+    public CentralYaleDTO add(CentralYaleDTO dto) {
+        return centralYaleLogic.add(dto);
     }
 
     @POST
-    @Path("{id}/residencia")
-    public ResidenciaDTO addResidencia(@PathParam("id") String id, ResidenciaDTO dto) {
-        PropietarioDTO propie = propietarioLogic.find(id);
-        ResidenciaDTO result = residenciaLogic.add(dto);
-        propie.addResidencia(dto.getId());
-        propietarioLogic.update(propie);
+    @Path("{id}/unidadResidencial")
+    public UnidadResidencialDTO addUnidadResidencial(@PathParam("id") String id, UnidadResidencialDTO dto) {
+        CentralYaleDTO central = centralYaleLogic.find(id);
+        UnidadResidencialDTO result = unidadesLogic.add(dto);
+        central.addUnidadResidencial(dto.getId());
+        centralYaleLogic.update(central);
         return result;
     }
 
     @PUT
-    public PropietarioDTO update(PropietarioDTO dto) {
-        return propietarioLogic.update(dto);
+    public CentralYaleDTO update(CentralYaleDTO dto) {
+        return centralYaleLogic.update(dto);
     }
 
     @GET
     @Path("/{id}")
-    public PropietarioDTO find(@PathParam("id") String id) {
-        return propietarioLogic.find(id);
+    public CentralYaleDTO find(@PathParam("id") String id) {
+        return centralYaleLogic.find(id);
     }
 
     @GET
-    public List<PropietarioDTO> all() {
-        return propietarioLogic.all();
+    public List<CentralYaleDTO> all() {
+        return centralYaleLogic.all();
     }
 
     @DELETE
     @Path("/{id}")
     public Response delete(@PathParam("id") String id) {
         try {
-            propietarioLogic.delete(id);
-            return Response.status(200).header("Access-Control-Allow-Origin", "*").entity("Sucessful: Propietario was deleted").build();
+            centralYaleLogic.delete(id);
+            return Response.status(200).header("Access-Control-Allow-Origin", "*").entity("Sucessful: CentralYale was deleted").build();
         } catch (Exception e) {
             Logger.getLogger(FloorService.class).log(Level.WARNING, e.getMessage());
             return Response.status(500).header("Access-Control-Allow-Origin", "*").entity("We found errors in your query, please contact the Web Admin.").build();
         }
     }
-
 }

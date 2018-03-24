@@ -13,6 +13,7 @@
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.ResidenciaEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.CerraduraEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.UnidadResidencialEntity</class>
+        <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.CentralYaleEntity</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.connection.autocommit" value="true" />
@@ -45,6 +46,7 @@
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.ResidenciaEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.CerraduraEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.UnidadResidencialEntity</class>
+        <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.CentralYaleEntity</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="kundera.nodes" value="localhost"/>
