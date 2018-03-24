@@ -49,7 +49,7 @@ import javax.ws.rs.core.Response;
  *
  * @author ca.mendoza968
  */
-@Path("/alertasAdministrador")
+@Path("/rooms")
 @Produces(MediaType.APPLICATION_JSON)
 public class RoomService {
     private final IRoomLogic roomLogic;

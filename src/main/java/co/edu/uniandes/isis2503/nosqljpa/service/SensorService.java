@@ -49,7 +49,7 @@ import javax.ws.rs.core.Response;
  *
  * @author ca.mendoza968
  */
-@Path("/alertasYale")
+@Path("/sensors")
 @Produces(MediaType.APPLICATION_JSON)
 public class SensorService {
     private final ISensorLogic sensorLogic;
