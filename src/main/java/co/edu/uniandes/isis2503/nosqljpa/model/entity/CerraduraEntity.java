@@ -40,15 +40,17 @@ public class CerraduraEntity implements Serializable {
     private String id;
     
     private String tipo;
+    
+    private String residencia;
    
     public CerraduraEntity() {
  
     }
 
-    public CerraduraEntity(String id, String tipo) {
+    public CerraduraEntity(String id, String tipo, String residencia) {
         this.id = id;
         this.tipo = tipo;
-        
+        this.residencia = residencia;
     }
 
     public String getTipo() {
@@ -65,6 +67,20 @@ public class CerraduraEntity implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * @return the residencia
+     */
+    public String getResidencia() {
+        return residencia;
+    }
+
+    /**
+     * @param residencia the residencia to set
+     */
+    public void setResidencia(String residencia) {
+        this.residencia = residencia;
     }
     
 }

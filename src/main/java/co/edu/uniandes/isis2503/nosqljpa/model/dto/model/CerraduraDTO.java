@@ -33,14 +33,16 @@ package co.edu.uniandes.isis2503.nosqljpa.model.dto.model;
 public class CerraduraDTO {
     private String id;
     private String tipo;
+    private String residencia;
     
     public CerraduraDTO() {
        
     }
 
-    public CerraduraDTO(String id, String tipo) {
+    public CerraduraDTO(String id, String tipo, String residencia) {
         this.id = id;
         this.tipo = tipo;
+        this.residencia = residencia;
     }
 
     /**
@@ -69,6 +71,20 @@ public class CerraduraDTO {
      */
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    /**
+     * @return the residencia
+     */
+    public String getResidencia() {
+        return residencia;
+    }
+
+    /**
+     * @param residencia the residencia to set
+     */
+    public void setResidencia(String residencia) {
+        this.residencia = residencia;
     }
     
 }
