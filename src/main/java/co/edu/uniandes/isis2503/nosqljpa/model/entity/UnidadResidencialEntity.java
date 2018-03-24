@@ -53,17 +53,23 @@ public class UnidadResidencialEntity implements Serializable {
     @ElementCollection
     private List<String> residencias;
     
+    private String administrador;
+    
+    private String centralYale;
+    
     public UnidadResidencialEntity() {
         this.residencias = new ArrayList();
     }
 
-    public UnidadResidencialEntity(String id, String nombre, String direccion, String estrato, String barrio, List<String> residencias) {
+    public UnidadResidencialEntity(String id, String nombre, String direccion, String estrato, String barrio, List<String> residencias, String administrador, String centralYale) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.estrato = estrato;
         this.barrio = barrio;
         this.residencias = residencias;
+        this.administrador = administrador;
+        this.centralYale = centralYale;
     }
 
     /**
@@ -148,6 +154,34 @@ public class UnidadResidencialEntity implements Serializable {
      */
     public void setResidencias(List<String> residencias) {
         this.residencias = residencias;
+    }
+
+    /**
+     * @return the administrador
+     */
+    public String getAdministrador() {
+        return administrador;
+    }
+
+    /**
+     * @param administrador the administrador to set
+     */
+    public void setAdministrador(String administrador) {
+        this.administrador = administrador;
+    }
+
+    /**
+     * @return the centralYale
+     */
+    public String getCentralYale() {
+        return centralYale;
+    }
+
+    /**
+     * @param centralYale the centralYale to set
+     */
+    public void setCentralYale(String centralYale) {
+        this.centralYale = centralYale;
     }
     
     

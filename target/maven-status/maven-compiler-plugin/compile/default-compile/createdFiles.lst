@@ -1,5 +1,6 @@
 co\edu\uniandes\isis2503\nosqljpa\persistence\SensorPersistence.class
 co\edu\uniandes\isis2503\nosqljpa\interfaces\IResidenciaConverter.class
+co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\UnidadResidencialConverter.class
 co\edu\uniandes\isis2503\nosqljpa\logic\CerraduraLogic.class
 co\edu\uniandes\isis2503\nosqljpa\interfaces\ISensorConverter.class
 co\edu\uniandes\isis2503\nosqljpa\interfaces\IRealTimeDataConverter.class
@@ -30,7 +31,10 @@ co\edu\uniandes\isis2503\nosqljpa\interfaces\IConsolidatedDataConverter.class
 co\edu\uniandes\isis2503\nosqljpa\main\Main.class
 co\edu\uniandes\isis2503\nosqljpa\model\entity\CentralYaleEntity.class
 co\edu\uniandes\isis2503\nosqljpa\logic\RealTimeDataLogic.class
+co\edu\uniandes\isis2503\nosqljpa\logic\UnidadResidencialLogic.class
+co\edu\uniandes\isis2503\nosqljpa\interfaces\IUnidadResidencialLogic.class
 co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\CerraduraConverter.class
+co\edu\uniandes\isis2503\nosqljpa\persistence\UnidadResidencialPersistence.class
 co\edu\uniandes\isis2503\nosqljpa\model\dto\model\RealTimeDataDTO.class
 co\edu\uniandes\isis2503\nosqljpa\interfaces\IFloorConverter.class
 co\edu\uniandes\isis2503\nosqljpa\model\dto\model\CerraduraDTO.class
@@ -50,6 +54,7 @@ co\edu\uniandes\isis2503\nosqljpa\interfaces\IAdministradorLogic.class
 co\edu\uniandes\isis2503\nosqljpa\interfaces\IConsolidatedDataLogic.class
 co\edu\uniandes\isis2503\nosqljpa\logic\RoomLogic.class
 co\edu\uniandes\isis2503\nosqljpa\logic\SensorLogic.class
+co\edu\uniandes\isis2503\nosqljpa\service\UnidadResidencialService.class
 co\edu\uniandes\isis2503\nosqljpa\interfaces\IMeasurementConverter.class
 co\edu\uniandes\isis2503\nosqljpa\logic\PropietarioLogic.class
 co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\FloorConverter.class
@@ -65,6 +70,7 @@ co\edu\uniandes\isis2503\nosqljpa\model\entity\HubEntity.class
 co\edu\uniandes\isis2503\nosqljpa\service\AdministradorService.class
 co\edu\uniandes\isis2503\nosqljpa\model\entity\FloorEntity.class
 co\edu\uniandes\isis2503\nosqljpa\interfaces\IPropietarioLogic.class
+co\edu\uniandes\isis2503\nosqljpa\interfaces\IUnidadResidencialConverter.class
 co\edu\uniandes\isis2503\nosqljpa\interfaces\IAdministradorConverter.class
 co\edu\uniandes\isis2503\nosqljpa\persistence\MeasurementPersistence.class
 co\edu\uniandes\isis2503\nosqljpa\interfaces\IRoomConverter.class

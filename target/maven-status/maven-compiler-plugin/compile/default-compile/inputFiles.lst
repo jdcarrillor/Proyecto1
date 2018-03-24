@@ -3,6 +3,7 @@ C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\un
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\RealTimeDataConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\CentralYaleEntity.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\UnidadResidencialEntity.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\service\UnidadResidencialService.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\RealTimeDataEntity.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\main\Main.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\ConsolidatedDataEntity.java
@@ -17,6 +18,7 @@ C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\un
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\logic\RoomLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\model\ResidenciaDTO.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\service\CerraduraService.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\logic\UnidadResidencialLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\ConsolidatedDataConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\persistence\RealTimeDataPersistence.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\ISensorConverter.java
@@ -33,6 +35,7 @@ C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\un
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\ICerraduraLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IConsolidatedDataConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\model\FloorDTO.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\UnidadResidencialConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\logic\RealTimeDataLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\AdministradorConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\model\PropietarioDTO.java
@@ -41,6 +44,7 @@ C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\un
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\PropietarioEntity.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\persistence\RoomPersistence.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IConsolidatedDataLogic.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IUnidadResidencialConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\model\MeasurementDTO.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\persistence\FloorPersistence.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\persistence\JPAConnection.java
@@ -53,10 +57,12 @@ C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\un
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\service\AdministradorService.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\ResidenciaConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\AdministradorEntity.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\persistence\UnidadResidencialPersistence.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\ResidenciaEntity.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\service\SensorService.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IAdministradorLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IRealTimeDataLogic.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IUnidadResidencialLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\persistence\PropietarioPersistence.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\service\PropietarioService.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IFloorConverter.java
