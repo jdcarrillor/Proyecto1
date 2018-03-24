@@ -10,6 +10,7 @@
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.RealTimeDataEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.AdministradorEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.PropietarioEntity</class>
+        <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.ResidenciaEntity</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.connection.autocommit" value="true" />
@@ -39,6 +40,7 @@
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.RealTimeDataEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.AdministradorEntity</class>
         <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.PropietarioEntity</class>
+        <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.ResidenciaEntity</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="kundera.nodes" value="localhost"/>

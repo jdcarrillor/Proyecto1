@@ -34,18 +34,22 @@ public class ResidenciaDTO {
     private String piso;
     private String tipo;
     private String apartamento;
+    private String cerradura;
+    private String propietario;
     
     public ResidenciaDTO() {
         
     }
 
-    public ResidenciaDTO(String id, String torre, String zona, String piso, String tipo, String apartamento) {
+    public ResidenciaDTO(String id, String torre, String zona, String piso, String tipo, String apartamento, String cerradura, String propietario) {
         this.id = id;
         this.torre = torre;
         this.zona = zona;
         this.piso = piso;
         this.tipo = tipo;
         this.apartamento = apartamento;
+        this.cerradura = cerradura;
+        this.propietario = propietario;
     }
 
     /**
@@ -130,6 +134,34 @@ public class ResidenciaDTO {
      */
     public void setApartamento(String apartamento) {
         this.apartamento = apartamento;
+    }
+
+    /**
+     * @return the cerradura
+     */
+    public String getCerradura() {
+        return cerradura;
+    }
+
+    /**
+     * @param cerradura the cerradura to set
+     */
+    public void setCerradura(String cerradura) {
+        this.cerradura = cerradura;
+    }
+
+    /**
+     * @return the propietario
+     */
+    public String getPropietario() {
+        return propietario;
+    }
+
+    /**
+     * @param propietario the propietario to set
+     */
+    public void setPropietario(String propietario) {
+        this.propietario = propietario;
     }
 
     
