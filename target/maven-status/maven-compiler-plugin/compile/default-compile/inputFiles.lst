@@ -6,6 +6,8 @@ C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\un
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\RealTimeDataEntity.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\main\Main.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\ConsolidatedDataEntity.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\PropietarioConverter.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IPropietarioConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\ISensorLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\model\UnidadResidencialDTO.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\SensorConverter.java
@@ -23,6 +25,7 @@ C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\un
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\SensorEntity.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\logic\MeasurementLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\CerraduraEntity.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\logic\PropietarioLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\logic\FloorLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IConsolidatedDataConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\model\FloorDTO.java
@@ -30,6 +33,7 @@ C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\un
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\AdministradorConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\model\PropietarioDTO.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\model\CerraduraDTO.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IPropietarioLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\PropietarioEntity.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\persistence\RoomPersistence.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IConsolidatedDataLogic.java
@@ -47,6 +51,8 @@ C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\un
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\service\SensorService.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IAdministradorLogic.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IRealTimeDataLogic.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\persistence\PropietarioPersistence.java
+C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\service\PropietarioService.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\interfaces\IFloorConverter.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\dto\model\HubDTO.java
 C:\Users\m.sicard10\Documents\NetBeansProjects\Proyecto1\src\main\java\co\edu\uniandes\isis2503\nosqljpa\model\entity\HubEntity.java

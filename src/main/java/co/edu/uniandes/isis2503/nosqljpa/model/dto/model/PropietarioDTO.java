@@ -25,7 +25,6 @@ package co.edu.uniandes.isis2503.nosqljpa.model.dto.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.ElementCollection;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -99,6 +98,5 @@ public class PropietarioDTO
     public void setResidencias(List<String> residencias) {
         this.residencias = residencias;
     }
-    
-    
+     
 }
