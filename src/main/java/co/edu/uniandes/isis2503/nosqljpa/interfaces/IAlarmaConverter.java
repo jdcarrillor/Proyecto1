@@ -21,58 +21,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package co.edu.uniandes.isis2503.nosqljpa.model.dto.model;
+package co.edu.uniandes.isis2503.nosqljpa.interfaces;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AlarmaDTO;
+import co.edu.uniandes.isis2503.nosqljpa.model.entity.AlarmaEntity;
+import java.util.List;
 
 /**
  *
- * @author jd.carrillor
+ * @author m.sicard10
  */
-@XmlRootElement
-public class HubDTO
+public interface IAlarmaConverter 
 {
-    private String id;
+    public AlarmaDTO entityToDto(AlarmaEntity entity);
 
-    private int healthChecksPermitidos;
-    
-    public HubDTO()
-    {
-        
-    }
-    
-    public HubDTO(String id, int healthChecksPermitidos)
-    {
-        this.id = id;
-        this.healthChecksPermitidos = healthChecksPermitidos;
-    }
+    public AlarmaEntity dtoToEntity(AlarmaDTO dto);
 
-    /**
-     * @return the id
-     */
-    public String getId() {
-        return id;
-    }
+    public List<AlarmaDTO> listEntitiesToListDTOs(List<AlarmaEntity> entities);
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the healthChecksPermitidos
-     */
-    public int getHealthChecksPermitidos() {
-        return healthChecksPermitidos;
-    }
-
-    /**
-     * @param healthChecksPermitidos the healthChecksPermitidos to set
-     */
-    public void setHealthChecksPermitidos(int healthChecksPermitidos) {
-        this.healthChecksPermitidos = healthChecksPermitidos;
-    }
+    public List<AlarmaEntity> listDTOsToListEntities(List<AlarmaDTO> dtos);
     
 }

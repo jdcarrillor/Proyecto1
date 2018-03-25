@@ -29,6 +29,7 @@ import java.util.List;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -47,14 +48,19 @@ public class PropietarioEntity implements Serializable
     @ElementCollection
     private List<String> residencias;
     
+    @ManyToOne
+    private List<AlarmaEntity> alarmas;
+    
     public PropietarioEntity() {
         this.residencias = new ArrayList();
+        this.alarmas = new ArrayList();
     }
 
-    public PropietarioEntity(String id, String nombre,List<String> residencias) {
+    public PropietarioEntity(String id, String nombre,List<String> residencias, List<AlarmaEntity> alarmas) {
         this.id = id;
         this.nombre = nombre;
         this.residencias = residencias;
+        this.alarmas = alarmas;
     }
 
     /**
@@ -97,6 +103,20 @@ public class PropietarioEntity implements Serializable
      */
     public void setResidencias(List<String> residencias) {
         this.residencias = residencias;
+    }
+
+    /**
+     * @return the alarmas
+     */
+    public List<AlarmaEntity> getAlarmas() {
+        return alarmas;
+    }
+
+    /**
+     * @param alarmas the alarmas to set
+     */
+    public void setAlarmas(List<AlarmaEntity> alarmas) {
+        this.alarmas = alarmas;
     }
 
 }

@@ -23,56 +23,55 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.model.dto.converter;
 
-import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAdministradorConverter;
-import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AdministradorDTO;
-import co.edu.uniandes.isis2503.nosqljpa.model.entity.AdministradorEntity;
+
+import co.edu.uniandes.isis2503.nosqljpa.interfaces.IHubConverter;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.HubDTO;
+import co.edu.uniandes.isis2503.nosqljpa.model.entity.HubEntity;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
- * @author m.sicard10
+ * @author jd.carrillor
  */
-public class AdministradorConverter implements IAdministradorConverter {
+public class HubConverter implements IHubConverter {
 
-    public static IAdministradorConverter CONVERTER = new AdministradorConverter();
+    public static IHubConverter CONVERTER = new HubConverter();
 
-    public AdministradorConverter() {
+    public HubConverter() {
     }
 
+   
     @Override
-    public AdministradorDTO entityToDto(AdministradorEntity entity) {
-        AdministradorDTO dto = new AdministradorDTO();
+    public HubDTO entityToDto(HubEntity entity) {
+        HubDTO dto = new HubDTO();
         dto.setId(entity.getId());
-        dto.setNombre(entity.getNombre());
-        dto.setUnidadResidencial(entity.getUnidadResidencial());
-        dto.setAlarmas(entity.getAlarmas());
+        dto.setHealthChecksPermitidos(entity.getHealthChecksPermitidos());
         return dto;
     }
 
     @Override
-    public AdministradorEntity dtoToEntity(AdministradorDTO dto) {
-        AdministradorEntity entity = new AdministradorEntity();
+    public HubEntity dtoToEntity(HubDTO dto) {
+        HubEntity entity = new HubEntity();
         entity.setId(dto.getId());
-        entity.setNombre(dto.getNombre());
-        entity.setunidadResidencial(dto.getUnidadResidencial());
-        entity.setAlarmas(dto.getAlarmas());
+        entity.setHealthChecksPermitidos(dto.getHealthChecksPermitidos());
+
         return entity;
     }
 
     @Override
-    public List<AdministradorDTO> listEntitiesToListDTOs(List<AdministradorEntity> entities) {
-        ArrayList<AdministradorDTO> dtos = new ArrayList<>();
-        for (AdministradorEntity entity : entities) {
+    public List<HubDTO> listEntitiesToListDTOs(List<HubEntity> entities) {
+        ArrayList<HubDTO> dtos = new ArrayList<>();
+        for (HubEntity entity : entities) {
             dtos.add(entityToDto(entity));
         }
         return dtos;
     }
 
     @Override
-    public List<AdministradorEntity> listDTOsToListEntities(List<AdministradorDTO> dtos) {
-        ArrayList<AdministradorEntity> entities = new ArrayList<>();
-        for (AdministradorDTO dto : dtos) {
+    public List<HubEntity> listDTOsToListEntities(List<HubDTO> dtos) {
+        ArrayList<HubEntity> entities = new ArrayList<>();
+        for (HubDTO dto : dtos) {
             entities.add(dtoToEntity(dto));
         }
         return entities;

@@ -24,45 +24,54 @@
 package co.edu.uniandes.isis2503.nosqljpa.model.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.ElementCollection;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import org.hibernate.annotations.ManyToAny;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
- * @author jd.carrillor
+ * @author m.sicard10
  */
 @Entity
-@Table(name = "CENTRALYALE")
-public class CentralYaleEntity implements Serializable
+@Table(name = "ALARMA")
+public class AlarmaEntity implements Serializable 
 {
-    
-     @Id
+    @Id
     private String id;
     
     private String nombre;
+   
+    private int tipo;
     
-    @ElementCollection
-    private List<String> unidadesResidenciales;
-    
-    @ManyToOne
-    private List<AlarmaEntity> alarmas;
-    
-    public CentralYaleEntity() {
-        this.unidadesResidenciales = new ArrayList();
-        this.alarmas = new ArrayList();
+   @Temporal(TemporalType.DATE)
+    private Date fecha;
+   
+   @OneToMany
+   private AdministradorEntity admin;
+   
+   @OneToMany
+   private CentralYaleEntity central;
+   
+   @OneToMany
+   private PropietarioEntity propietario;
+
+    public AlarmaEntity() {
+ 
     }
 
-    public CentralYaleEntity(String id, String nombre,List<String> unidadesResidenciales, List<AlarmaEntity> alarmas) {
+    public AlarmaEntity(String id, String nombre, int tipo, Date fecha, AdministradorEntity admin, CentralYaleEntity central, PropietarioEntity propietario) {
         this.id = id;
         this.nombre = nombre;
-        this.unidadesResidenciales = unidadesResidenciales;
-        this.alarmas = alarmas;
+        this.tipo = tipo;
+        this.fecha = fecha;
+        this.admin=admin;
+        this.central=central;
+        this.propietario=propietario;
+        
     }
 
     /**
@@ -94,31 +103,73 @@ public class CentralYaleEntity implements Serializable
     }
 
     /**
-     * @return the unidadesResidenciales
+     * @return the tipo
      */
-    public List<String> getUnidadesResidenciales() {
-        return unidadesResidenciales;
+    public int getTipo() {
+        return tipo;
     }
 
     /**
-     * @param unidadesResidenciales the unidadesResidenciales to set
+     * @param tipo the tipo to set
      */
-    public void setUnidadesResidenciales(List<String> unidadesResidenciales) {
-        this.unidadesResidenciales = unidadesResidenciales;
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
     }
 
     /**
-     * @return the alarmas
+     * @return the fecha
      */
-    public List<AlarmaEntity> getAlarmas() {
-        return alarmas;
+    public Date getFecha() {
+        return fecha;
     }
 
     /**
-     * @param alarmas the alarmas to set
+     * @param fecha the fecha to set
      */
-    public void setAlarmas(List<AlarmaEntity> alarmas) {
-        this.alarmas = alarmas;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    /**
+     * @return the admin
+     */
+    public AdministradorEntity getAdmin() {
+        return admin;
+    }
+
+    /**
+     * @param admin the admin to set
+     */
+    public void setAdmin(AdministradorEntity admin) {
+        this.admin = admin;
+    }
+
+    /**
+     * @return the central
+     */
+    public CentralYaleEntity getCentral() {
+        return central;
+    }
+
+    /**
+     * @param central the central to set
+     */
+    public void setCentral(CentralYaleEntity central) {
+        this.central = central;
+    }
+
+    /**
+     * @return the propietario
+     */
+    public PropietarioEntity getPropietario() {
+        return propietario;
+    }
+
+    /**
+     * @param propietario the propietario to set
+     */
+    public void setPropietario(PropietarioEntity propietario) {
+        this.propietario = propietario;
     }
     
 }

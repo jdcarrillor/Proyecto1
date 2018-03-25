@@ -23,15 +23,9 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.service;
 
-import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAdministradorLogic;
-import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAlarmaConverter;
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAlarmaLogic;
-import co.edu.uniandes.isis2503.nosqljpa.logic.AdministradorLogic;
 import co.edu.uniandes.isis2503.nosqljpa.logic.AlarmaLogic;
-import co.edu.uniandes.isis2503.nosqljpa.model.dto.converter.AlarmaConverter;
-import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AdministradorDTO;
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AlarmaDTO;
-import co.edu.uniandes.isis2503.nosqljpa.model.entity.AlarmaEntity;
 import com.sun.istack.logging.Logger;
 import java.util.List;
 import java.util.logging.Level;
@@ -49,26 +43,21 @@ import javax.ws.rs.core.Response;
  *
  * @author m.sicard10
  */
-@Path("/administrador")
+@Path("/alarma")
 @Produces(MediaType.APPLICATION_JSON)
-public class AdministradorService {
+public class AlarmaService{
     
-    private final IAdministradorLogic administradorLogic;
+ private final IAlarmaLogic alarmaLogic;
     //private final IRoomLogic roomLogic; IRIA UNIADAD RESIDENCIAL
-    private final IAlarmaLogic alarmaLogic;
-    
-    private final IAlarmaConverter conver;
 
-    public AdministradorService() {
-        this.administradorLogic = new AdministradorLogic();
+    public AlarmaService() {
         this.alarmaLogic = new AlarmaLogic();
-        this.conver= new AlarmaConverter();
         //this.roomLogic = new RoomLogic(); IRIA UNIADAD RESIDENCIAL
     }
 
     @POST
-    public AdministradorDTO add(AdministradorDTO dto) {
-        return administradorLogic.add(dto);
+    public AlarmaDTO add(AlarmaDTO dto) {
+        return alarmaLogic.add(dto);
     }
 
     //@POST
@@ -82,39 +71,33 @@ public class AdministradorService {
     //}
 
     @PUT
-    public AdministradorDTO update(AdministradorDTO dto) {
-        return administradorLogic.update(dto);
+    public AlarmaDTO update(AlarmaDTO dto) {
+        return alarmaLogic.update(dto);
     }
 
     @GET
     @Path("/{id}")
-    public AdministradorDTO find(@PathParam("id") String id) {
-        return administradorLogic.find(id);
+    public AlarmaDTO find(@PathParam("id") String id) {
+        return alarmaLogic.find(id);
     }
     
-    
-    @GET
-    @Path("{id}/alarmas")
-    public List<AlarmaDTO> addRoom(@PathParam("id") String id) {
-        AdministradorDTO admin = administradorLogic.find(id);
-        
-        return conver.listEntitiesToListDTOs(admin.getAlarmas());
-    }
 
     @GET
-    public List<AdministradorDTO> all() {
-        return administradorLogic.all();
+    public List<AlarmaDTO> all() {
+        return alarmaLogic.all();
     }
 
     @DELETE
     @Path("/{id}")
     public Response delete(@PathParam("id") String id) {
         try {
-            administradorLogic.delete(id);
+            alarmaLogic.delete(id);
             return Response.status(200).header("Access-Control-Allow-Origin", "*").entity("Sucessful: Administrador was deleted").build();
         } catch (Exception e) {
             Logger.getLogger(FloorService.class).log(Level.WARNING, e.getMessage());
+            
             return Response.status(500).header("Access-Control-Allow-Origin", "*").entity("We found errors in your query, please contact the Web Admin.").build();
         }
     }
+    
 }

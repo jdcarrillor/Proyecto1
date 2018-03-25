@@ -23,6 +23,9 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.model.dto.model;
 
+import co.edu.uniandes.isis2503.nosqljpa.model.entity.AlarmaEntity;
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -34,15 +37,19 @@ public class AdministradorDTO {
     private String id;
     private String nombre;
     private String unidadResidencial;
+    private List<AlarmaEntity> alarmas;
     
     public AdministradorDTO() {
-      
+      this.alarmas = new ArrayList();
     }
 
-    public AdministradorDTO(String id, String nombre, String unidadResidencial) {
+    public AdministradorDTO(String id, String nombre, String unidadResidencial,List<AlarmaEntity> alarmas) {
         this.id = id;
         this.nombre = nombre;
         this.unidadResidencial = unidadResidencial;
+        this.alarmas=alarmas;
+        
+
     }
 
     /**
@@ -85,6 +92,23 @@ public class AdministradorDTO {
      */
     public void setUnidadResidencial(String unidadResidencial) {
         this.unidadResidencial = unidadResidencial;
+    }
+
+    /**
+     * @return the alarmas
+     */
+    public List<AlarmaEntity> getAlarmas() {
+        return alarmas;
+    }
+
+    /**
+     * @param alarmas the alarmas to set
+     */
+    public void setAlarmas(List<AlarmaEntity> alarmas) {
+        this.alarmas = alarmas;
+    }
+    public void addtAlarmas(AlarmaEntity alarma) {
+        this.alarmas.add(alarma);
     }
     
     

@@ -21,58 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package co.edu.uniandes.isis2503.nosqljpa.model.dto.model;
+package co.edu.uniandes.isis2503.nosqljpa.interfaces;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.HubDTO;
+
+import java.util.List;
 
 /**
  *
  * @author jd.carrillor
  */
-@XmlRootElement
-public class HubDTO
+public interface IHubLogic
 {
-    private String id;
-
-    private int healthChecksPermitidos;
-    
-    public HubDTO()
-    {
-        
-    }
-    
-    public HubDTO(String id, int healthChecksPermitidos)
-    {
-        this.id = id;
-        this.healthChecksPermitidos = healthChecksPermitidos;
-    }
-
-    /**
-     * @return the id
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the healthChecksPermitidos
-     */
-    public int getHealthChecksPermitidos() {
-        return healthChecksPermitidos;
-    }
-
-    /**
-     * @param healthChecksPermitidos the healthChecksPermitidos to set
-     */
-    public void setHealthChecksPermitidos(int healthChecksPermitidos) {
-        this.healthChecksPermitidos = healthChecksPermitidos;
-    }
+    public HubDTO add(HubDTO dto);
+    public HubDTO update(HubDTO dto);
+    public HubDTO find(String id);    
+    public List<HubDTO> findByRoomId(String id);
+    public List<HubDTO> all();
+    public Boolean delete(String id);
     
 }

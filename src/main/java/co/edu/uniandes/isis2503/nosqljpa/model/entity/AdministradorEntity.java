@@ -24,8 +24,11 @@
 package co.edu.uniandes.isis2503.nosqljpa.model.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -42,15 +45,19 @@ public class AdministradorEntity implements Serializable {
     private String nombre;
    
     private String unidadResidencial;
+    
+    @ManyToOne
+    private List<AlarmaEntity> alarmas;
 
     public AdministradorEntity() {
- 
+ this.alarmas  = new ArrayList();
     }
 
-    public AdministradorEntity(String id, String nombre, String unidadResidencial) {
+    public AdministradorEntity(String id, String nombre, String unidadResidencial, List<AlarmaEntity> alarmas) {
         this.id = id;
         this.nombre = nombre;
         this.unidadResidencial = unidadResidencial;
+        this.alarmas=alarmas;
         
     }
 
@@ -76,6 +83,20 @@ public class AdministradorEntity implements Serializable {
 
     public void setunidadResidencial(String unidadResidencial) {
         this.unidadResidencial = unidadResidencial;
+    }
+
+    /**
+     * @return the alarmas
+     */
+    public List<AlarmaEntity> getAlarmas() {
+        return alarmas;
+    }
+
+    /**
+     * @param alarmas the alarmas to set
+     */
+    public void setAlarmas(List<AlarmaEntity> alarmas) {
+        this.alarmas = alarmas;
     }
     
 }

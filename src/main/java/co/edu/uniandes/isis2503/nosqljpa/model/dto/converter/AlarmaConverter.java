@@ -23,9 +23,9 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.model.dto.converter;
 
-import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAdministradorConverter;
-import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AdministradorDTO;
-import co.edu.uniandes.isis2503.nosqljpa.model.entity.AdministradorEntity;
+import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAlarmaConverter;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AlarmaDTO;
+import co.edu.uniandes.isis2503.nosqljpa.model.entity.AlarmaEntity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,49 +33,51 @@ import java.util.List;
  *
  * @author m.sicard10
  */
-public class AdministradorConverter implements IAdministradorConverter {
+public class AlarmaConverter implements IAlarmaConverter {
 
-    public static IAdministradorConverter CONVERTER = new AdministradorConverter();
+    public static IAlarmaConverter CONVERTER = new AlarmaConverter();
 
-    public AdministradorConverter() {
+    public AlarmaConverter() {
     }
 
     @Override
-    public AdministradorDTO entityToDto(AdministradorEntity entity) {
-        AdministradorDTO dto = new AdministradorDTO();
+    public AlarmaDTO entityToDto(AlarmaEntity entity) {
+        AlarmaDTO dto = new AlarmaDTO();
         dto.setId(entity.getId());
         dto.setNombre(entity.getNombre());
-        dto.setUnidadResidencial(entity.getUnidadResidencial());
-        dto.setAlarmas(entity.getAlarmas());
+        dto.setTipo(entity.getTipo());
+        dto.setFecha(entity.getFecha());
+        dto.setAdmin(entity.getAdmin());
         return dto;
     }
 
     @Override
-    public AdministradorEntity dtoToEntity(AdministradorDTO dto) {
-        AdministradorEntity entity = new AdministradorEntity();
+    public AlarmaEntity dtoToEntity(AlarmaDTO dto) {
+        AlarmaEntity entity = new AlarmaEntity();
         entity.setId(dto.getId());
         entity.setNombre(dto.getNombre());
-        entity.setunidadResidencial(dto.getUnidadResidencial());
-        entity.setAlarmas(dto.getAlarmas());
+        entity.setTipo(dto.getTipo());
+        entity.setFecha(dto.getFecha());
+        entity.setAdmin(dto.getAdmin());
         return entity;
+        
     }
 
     @Override
-    public List<AdministradorDTO> listEntitiesToListDTOs(List<AdministradorEntity> entities) {
-        ArrayList<AdministradorDTO> dtos = new ArrayList<>();
-        for (AdministradorEntity entity : entities) {
+    public List<AlarmaDTO> listEntitiesToListDTOs(List<AlarmaEntity> entities) {
+        ArrayList<AlarmaDTO> dtos = new ArrayList<>();
+        for (AlarmaEntity entity : entities) {
             dtos.add(entityToDto(entity));
         }
         return dtos;
     }
 
     @Override
-    public List<AdministradorEntity> listDTOsToListEntities(List<AdministradorDTO> dtos) {
-        ArrayList<AdministradorEntity> entities = new ArrayList<>();
-        for (AdministradorDTO dto : dtos) {
+    public List<AlarmaEntity> listDTOsToListEntities(List<AlarmaDTO> dtos) {
+        ArrayList<AlarmaEntity> entities = new ArrayList<>();
+        for (AlarmaDTO dto : dtos) {
             entities.add(dtoToEntity(dto));
         }
         return entities;
     }
-    
 }

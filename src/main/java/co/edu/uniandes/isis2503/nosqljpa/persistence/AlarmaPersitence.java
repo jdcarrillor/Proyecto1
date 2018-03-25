@@ -21,58 +21,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package co.edu.uniandes.isis2503.nosqljpa.model.dto.model;
+package co.edu.uniandes.isis2503.nosqljpa.persistence;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import co.edu.uniandes.isis2503.nosqljpa.model.entity.AlarmaEntity;
+
+
 
 /**
  *
- * @author jd.carrillor
+ * @author m.sicard10
  */
-@XmlRootElement
-public class HubDTO
-{
-    private String id;
-
-    private int healthChecksPermitidos;
+public class AlarmaPersitence extends Persistencer<AlarmaEntity, String> {
     
-    public HubDTO()
-    {
-        
+    public AlarmaPersitence()    {
+        this.entityClass = AlarmaEntity.class;
     }
     
-    public HubDTO(String id, int healthChecksPermitidos)
-    {
-        this.id = id;
-        this.healthChecksPermitidos = healthChecksPermitidos;
-    }
-
-    /**
-     * @return the id
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the healthChecksPermitidos
-     */
-    public int getHealthChecksPermitidos() {
-        return healthChecksPermitidos;
-    }
-
-    /**
-     * @param healthChecksPermitidos the healthChecksPermitidos to set
-     */
-    public void setHealthChecksPermitidos(int healthChecksPermitidos) {
-        this.healthChecksPermitidos = healthChecksPermitidos;
-    }
+    
     
 }
