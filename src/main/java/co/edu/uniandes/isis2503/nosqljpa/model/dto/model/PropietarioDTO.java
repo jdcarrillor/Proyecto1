@@ -42,7 +42,7 @@ public class PropietarioDTO
     private String nombre;
 
     private List<String> residencias;
-    private List<AlarmaEntity> alarmas;
+    private List<String> alarmas;
     
     
     public PropietarioDTO() {
@@ -50,7 +50,7 @@ public class PropietarioDTO
         this.alarmas = new ArrayList();
     }
 
-    public PropietarioDTO(String id, String nombre,List<String> residencias, List<AlarmaEntity> alarmas) {
+    public PropietarioDTO(String id, String nombre,List<String> residencias, List<String> alarmas) {
         this.id = id;
         this.nombre = nombre;
         this.residencias = residencias;
@@ -61,7 +61,7 @@ public class PropietarioDTO
         this.residencias.add(id);
     }
 
-    public void addAlarma(AlarmaEntity id) {
+    public void addAlarma(String id) {
         this.getAlarmas().add(id);
     }
     /**
@@ -109,15 +109,19 @@ public class PropietarioDTO
     /**
      * @return the alarmas
      */
-    public List<AlarmaEntity> getAlarmas() {
+    public List<String> getAlarmas() {
         return alarmas;
     }
 
     /**
      * @param alarmas the alarmas to set
      */
-    public void setAlarmas(List<AlarmaEntity> alarmas) {
+    public void setAlarmas(List<String> alarmas) {
         this.alarmas = alarmas;
     }
+    public void addtAlarmas(String alarma) {
+        this.alarmas.add(alarma);
+    }
+    
      
 }

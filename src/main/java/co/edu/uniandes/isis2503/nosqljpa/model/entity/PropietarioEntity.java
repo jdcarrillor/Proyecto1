@@ -48,14 +48,14 @@ public class PropietarioEntity implements Serializable
     @ElementCollection
     private List<String> residencias;
     
-    private List<AlarmaEntity> alarmas;
+    private List<String> alarmas;
     
     public PropietarioEntity() {
         this.residencias = new ArrayList();
         this.alarmas = new ArrayList();
     }
 
-    public PropietarioEntity(String id, String nombre,List<String> residencias, List<AlarmaEntity> alarmas) {
+    public PropietarioEntity(String id, String nombre,List<String> residencias, List<String> alarmas) {
         this.id = id;
         this.nombre = nombre;
         this.residencias = residencias;
@@ -107,14 +107,14 @@ public class PropietarioEntity implements Serializable
     /**
      * @return the alarmas
      */
-    public List<AlarmaEntity> getAlarmas() {
+    public List<String> getAlarmas() {
         return alarmas;
     }
 
     /**
      * @param alarmas the alarmas to set
      */
-    public void setAlarmas(List<AlarmaEntity> alarmas) {
+    public void setAlarmas(List<String> alarmas) {
         this.alarmas = alarmas;
     }
 

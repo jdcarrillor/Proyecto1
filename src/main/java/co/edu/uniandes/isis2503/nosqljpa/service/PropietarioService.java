@@ -23,10 +23,13 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.service;
 
+import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAlarmaLogic;
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.IPropietarioLogic;
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.IResidenciaLogic;
+import co.edu.uniandes.isis2503.nosqljpa.logic.AlarmaLogic;
 import co.edu.uniandes.isis2503.nosqljpa.logic.PropietarioLogic;
 import co.edu.uniandes.isis2503.nosqljpa.logic.ResidenciaLogic;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AlarmaDTO;
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.PropietarioDTO;
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.ResidenciaDTO;
 import com.sun.istack.logging.Logger;
@@ -52,10 +55,32 @@ public class PropietarioService {
 
     private final IPropietarioLogic propietarioLogic;
     private final IResidenciaLogic residenciaLogic; 
+     private final IAlarmaLogic alarmaLogic;
 
     public PropietarioService() {
         this.propietarioLogic = new PropietarioLogic();
         this.residenciaLogic = new ResidenciaLogic(); 
+        this.alarmaLogic = new AlarmaLogic();
+    }
+    
+     @POST
+    @Path("{id}/alarmas")
+    public AlarmaDTO addRoom(@PathParam("id") String id, AlarmaDTO dto) {
+        PropietarioDTO floor = propietarioLogic.find(id);
+        floor.addtAlarmas(dto.getNombre());
+        AlarmaDTO resul= alarmaLogic.add(dto);
+        resul.setPropietario(floor.getId());
+        propietarioLogic.update(floor);
+       
+        return resul;
+    }
+    
+    @GET
+    @Path("{id}/alarmas")
+    public List<String> addRoom(@PathParam("id") String id) {
+        PropietarioDTO admin = propietarioLogic.find(id);
+        
+        return (admin.getAlarmas());
     }
 
     @POST

@@ -46,13 +46,13 @@ public class AdministradorEntity implements Serializable {
    
     private String unidadResidencial;
     
-    private List<AlarmaEntity> alarmas;
+    private List<String> alarmas;
 
     public AdministradorEntity() {
  this.alarmas  = new ArrayList();
     }
 
-    public AdministradorEntity(String id, String nombre, String unidadResidencial, List<AlarmaEntity> alarmas) {
+    public AdministradorEntity(String id, String nombre, String unidadResidencial, List<String> alarmas) {
         this.id = id;
         this.nombre = nombre;
         this.unidadResidencial = unidadResidencial;
@@ -87,14 +87,14 @@ public class AdministradorEntity implements Serializable {
     /**
      * @return the alarmas
      */
-    public List<AlarmaEntity> getAlarmas() {
+    public List<String> getAlarmas() {
         return alarmas;
     }
 
     /**
      * @param alarmas the alarmas to set
      */
-    public void setAlarmas(List<AlarmaEntity> alarmas) {
+    public void setAlarmas(List<String> alarmas) {
         this.alarmas = alarmas;
     }
     

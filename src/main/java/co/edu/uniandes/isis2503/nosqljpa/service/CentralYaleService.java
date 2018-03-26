@@ -23,10 +23,13 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.service;
 
+import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAlarmaLogic;
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.ICentralYaleLogic;
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.IUnidadResidencialLogic;
+import co.edu.uniandes.isis2503.nosqljpa.logic.AlarmaLogic;
 import co.edu.uniandes.isis2503.nosqljpa.logic.CentralYaleLogic;
 import co.edu.uniandes.isis2503.nosqljpa.logic.UnidadResidencialLogic;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AlarmaDTO;
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.CentralYaleDTO;
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.UnidadResidencialDTO;
 import com.sun.istack.logging.Logger;
@@ -52,15 +55,37 @@ public class CentralYaleService {
    
     private final ICentralYaleLogic centralYaleLogic;
     private final IUnidadResidencialLogic unidadesLogic;
+    private final IAlarmaLogic alarmaLogic;
 
     public CentralYaleService() {
         this.centralYaleLogic = new CentralYaleLogic();
         this.unidadesLogic = new UnidadResidencialLogic();
+        this.alarmaLogic= new AlarmaLogic();
     }
 
     @POST
     public CentralYaleDTO add(CentralYaleDTO dto) {
         return centralYaleLogic.add(dto);
+    }
+    
+    @POST
+    @Path("{id}/alarmas")
+    public AlarmaDTO addRoom(@PathParam("id") String id, AlarmaDTO dto) {
+        CentralYaleDTO floor = centralYaleLogic.find(id);
+        floor.addtAlarmas(dto.getNombre());
+        AlarmaDTO resul= alarmaLogic.add(dto);
+        resul.setCentral(floor.getId());
+        centralYaleLogic.update(floor);
+       
+        return resul;
+    }
+    
+    @GET
+    @Path("{id}/alarmas")
+    public List<String> addRoom(@PathParam("id") String id) {
+        CentralYaleDTO admin = centralYaleLogic.find(id);
+        
+        return (admin.getAlarmas());
     }
 
     @POST

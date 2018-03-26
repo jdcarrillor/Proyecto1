@@ -23,11 +23,13 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.service;
 
+import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAdministradorConverter;
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAdministradorLogic;
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAlarmaConverter;
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.IAlarmaLogic;
 import co.edu.uniandes.isis2503.nosqljpa.logic.AdministradorLogic;
 import co.edu.uniandes.isis2503.nosqljpa.logic.AlarmaLogic;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.converter.AdministradorConverter;
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.converter.AlarmaConverter;
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AdministradorDTO;
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AlarmaDTO;
@@ -58,11 +60,14 @@ public class AdministradorService {
     private final IAlarmaLogic alarmaLogic;
     
     private final IAlarmaConverter conver;
+    
+    private final IAdministradorConverter converAdm;
 
     public AdministradorService() {
         this.administradorLogic = new AdministradorLogic();
         this.alarmaLogic = new AlarmaLogic();
         this.conver= new AlarmaConverter();
+        this.converAdm= new AdministradorConverter();
         //this.roomLogic = new RoomLogic(); IRIA UNIADAD RESIDENCIAL
     }
 
@@ -71,15 +76,17 @@ public class AdministradorService {
         return administradorLogic.add(dto);
     }
 
-    //@POST
-    //@Path("{code}/rooms")
-    //public RoomDTO addRoom(@PathParam("code") String code, RoomDTO dto) {
-        //FloorDTO floor = floorLogic.findCode(code);
-        //RoomDTO result = roomLogic.add(dto);
-        //floor.addRoom(dto.getId());
-        //floorLogic.update(floor);
-        //return result;
-    //}
+    @POST
+    @Path("{id}/alarmas")
+    public AlarmaDTO addRoom(@PathParam("id") String id, AlarmaDTO dto) {
+        AdministradorDTO floor = administradorLogic.find(id);
+        floor.addtAlarmas(dto.getNombre());
+        AlarmaDTO resul= alarmaLogic.add(dto);
+        resul.setAdmin(floor.getId());
+        administradorLogic.update(floor);
+       
+        return resul;
+    }
 
     @PUT
     public AdministradorDTO update(AdministradorDTO dto) {
@@ -95,10 +102,10 @@ public class AdministradorService {
     
     @GET
     @Path("{id}/alarmas")
-    public List<AlarmaDTO> addRoom(@PathParam("id") String id) {
+    public List<String> addRoom(@PathParam("id") String id) {
         AdministradorDTO admin = administradorLogic.find(id);
         
-        return conver.listEntitiesToListDTOs(admin.getAlarmas());
+        return (admin.getAlarmas());
     }
 
     @GET

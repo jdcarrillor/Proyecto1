@@ -50,22 +50,22 @@ public class AlarmaEntity implements Serializable
    @Temporal(TemporalType.DATE)
     private Date fecha;
    
-   private AdministradorEntity admin;
+   private String admini;
    
-   private CentralYaleEntity central;
+   private String central;
    
-   private PropietarioEntity propietario;
+   private String propietario;
 
     public AlarmaEntity() {
  
     }
 
-    public AlarmaEntity(String id, String nombre, int tipo, Date fecha, AdministradorEntity admin, CentralYaleEntity central, PropietarioEntity propietario) {
+    public AlarmaEntity(String id, String nombre, int tipo, Date fecha, String admin, String central, String propietario) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
         this.fecha = fecha;
-        this.admin=admin;
+        this.admini=admin;
         this.central=central;
         this.propietario=propietario;
         
@@ -130,42 +130,42 @@ public class AlarmaEntity implements Serializable
     /**
      * @return the admin
      */
-    public AdministradorEntity getAdmin() {
-        return admin;
+    public String getAdmin() {
+        return admini;
     }
 
     /**
      * @param admin the admin to set
      */
-    public void setAdmin(AdministradorEntity admin) {
-        this.admin = admin;
+    public void setAdmin(String admin) {
+        this.admini = admin;
     }
 
     /**
      * @return the central
      */
-    public CentralYaleEntity getCentral() {
+    public String getCentral() {
         return central;
     }
 
     /**
      * @param central the central to set
      */
-    public void setCentral(CentralYaleEntity central) {
+    public void setCentral(String central) {
         this.central = central;
     }
 
     /**
      * @return the propietario
      */
-    public PropietarioEntity getPropietario() {
+    public String getPropietario() {
         return propietario;
     }
 
     /**
      * @param propietario the propietario to set
      */
-    public void setPropietario(PropietarioEntity propietario) {
+    public void setPropietario(String propietario) {
         this.propietario = propietario;
     }
     

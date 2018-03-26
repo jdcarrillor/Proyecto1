@@ -41,13 +41,14 @@ public class CentralYaleDTO {
    
     private List<String> unidadesResidenciales;
     
-     private List<AlarmaEntity> alarmas;
+     private List<String> alarmas;
     
     public CentralYaleDTO() {
         this.unidadesResidenciales = new ArrayList();
+        this.alarmas = new ArrayList();
     }
 
-    public CentralYaleDTO(String id, String nombre, String code, List<String> unidadesResidenciales, List<AlarmaEntity> alarmas) {
+    public CentralYaleDTO(String id, String nombre, String code, List<String> unidadesResidenciales, List<String> alarmas) {
         this.id = id;
         this.nombre = nombre;
         this.unidadesResidenciales = unidadesResidenciales;
@@ -104,14 +105,18 @@ public class CentralYaleDTO {
     /**
      * @return the alarmas
      */
-    public List<AlarmaEntity> getAlarmas() {
+    public List<String> getAlarmas() {
         return alarmas;
     }
 
     /**
      * @param alarmas the alarmas to set
      */
-    public void setAlarmas(List<AlarmaEntity> alarmas) {
+    public void setAlarmas(List<String> alarmas) {
         this.alarmas = alarmas;
     }
+    public void addtAlarmas(String alarma) {
+        this.alarmas.add(alarma);
+    }
+    
 }

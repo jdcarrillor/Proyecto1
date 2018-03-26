@@ -40,18 +40,20 @@ public class AlarmaDTO
     private String nombre;
     private int tipo;
     private Date fecha;
-    private AdministradorEntity admin;
-  
-   private CentralYaleEntity central;
+    private String admin;
+    
+    private String central;
+    
+ 
 
-   private PropietarioEntity propietario;
+   private String propietario;
 
     
     public AlarmaDTO() {
       
     }
 
-    public AlarmaDTO(String id, String nombre, int tipo, Date fecha, AdministradorEntity admin, CentralYaleEntity central, PropietarioEntity propietario) {
+    public AlarmaDTO(String id, String nombre, int tipo, Date fecha, String admin, String central, String propietario) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -121,42 +123,42 @@ public class AlarmaDTO
     /**
      * @return the admin
      */
-    public AdministradorEntity getAdmin() {
+    public String getAdmin() {
         return admin;
     }
 
     /**
      * @param admin the admin to set
      */
-    public void setAdmin(AdministradorEntity admin) {
+    public void setAdmin(String admin) {
         this.admin = admin;
     }
 
     /**
      * @return the central
      */
-    public CentralYaleEntity getCentral() {
+    public String getCentral() {
         return central;
     }
 
     /**
      * @param central the central to set
      */
-    public void setCentral(CentralYaleEntity central) {
+    public void setCentral(String central) {
         this.central = central;
     }
 
     /**
      * @return the propietario
      */
-    public PropietarioEntity getPropietario() {
+    public String getPropietario() {
         return propietario;
     }
 
     /**
      * @param propietario the propietario to set
      */
-    public void setPropietario(PropietarioEntity propietario) {
+    public void setPropietario(String propietario) {
         this.propietario = propietario;
     }
     
