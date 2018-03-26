@@ -37,13 +37,13 @@ public class AdministradorDTO {
     private String id;
     private String nombre;
     private String unidadResidencial;
-    private List<AlarmaEntity> alarmas;
+    private List<String> alarmas;
     
     public AdministradorDTO() {
       this.alarmas = new ArrayList();
     }
 
-    public AdministradorDTO(String id, String nombre, String unidadResidencial,List<AlarmaEntity> alarmas) {
+    public AdministradorDTO(String id, String nombre, String unidadResidencial,List<String> alarmas) {
         this.id = id;
         this.nombre = nombre;
         this.unidadResidencial = unidadResidencial;
@@ -97,17 +97,17 @@ public class AdministradorDTO {
     /**
      * @return the alarmas
      */
-    public List<AlarmaEntity> getAlarmas() {
+    public List<String> getAlarmas() {
         return alarmas;
     }
 
     /**
      * @param alarmas the alarmas to set
      */
-    public void setAlarmas(List<AlarmaEntity> alarmas) {
+    public void setAlarmas(List<String> alarmas) {
         this.alarmas = alarmas;
     }
-    public void addtAlarmas(AlarmaEntity alarma) {
+    public void addtAlarmas(String alarma) {
         this.alarmas.add(alarma);
     }
     

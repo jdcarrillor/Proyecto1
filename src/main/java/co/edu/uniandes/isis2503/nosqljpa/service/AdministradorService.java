@@ -93,13 +93,13 @@ public class AdministradorService {
     }
     
     
-    @GET
-    @Path("{id}/alarmas")
-    public List<AlarmaDTO> addRoom(@PathParam("id") String id) {
-        AdministradorDTO admin = administradorLogic.find(id);
+    //@GET
+    //@Path("{id}/alarmas")
+    //public List<String> addRoom(@PathParam("id") String id) {
+      //  AdministradorDTO admin = administradorLogic.find(id);
         
-        return conver.listEntitiesToListDTOs(admin.getAlarmas());
-    }
+        //return conver.listEntitiesToListDTOs(admin.getAlarmas());
+    //}
 
     @GET
     public List<AdministradorDTO> all() {
