@@ -48,7 +48,6 @@ public class PropietarioEntity implements Serializable
     @ElementCollection
     private List<String> residencias;
     
-    @ManyToOne
     private List<AlarmaEntity> alarmas;
     
     public PropietarioEntity() {

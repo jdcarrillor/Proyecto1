@@ -46,7 +46,6 @@ public class AdministradorEntity implements Serializable {
    
     private String unidadResidencial;
     
-    @ManyToOne
     private List<AlarmaEntity> alarmas;
 
     public AdministradorEntity() {

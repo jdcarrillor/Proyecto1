@@ -29,9 +29,7 @@ import java.util.List;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import org.hibernate.annotations.ManyToAny;
 
 /**
  *
@@ -50,7 +48,6 @@ public class CentralYaleEntity implements Serializable
     @ElementCollection
     private List<String> unidadesResidenciales;
     
-    @ManyToOne
     private List<AlarmaEntity> alarmas;
     
     public CentralYaleEntity() {

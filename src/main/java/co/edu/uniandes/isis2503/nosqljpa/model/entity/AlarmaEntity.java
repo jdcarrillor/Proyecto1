@@ -50,13 +50,10 @@ public class AlarmaEntity implements Serializable
    @Temporal(TemporalType.DATE)
     private Date fecha;
    
-   @OneToMany
    private AdministradorEntity admin;
    
-   @OneToMany
    private CentralYaleEntity central;
    
-   @OneToMany
    private PropietarioEntity propietario;
 
     public AlarmaEntity() {
