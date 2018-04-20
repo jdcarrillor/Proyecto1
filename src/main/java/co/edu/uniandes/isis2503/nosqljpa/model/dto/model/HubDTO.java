@@ -33,6 +33,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class HubDTO
 {
     private String id;
+    
+     private String cerradura;
 
     private int healthChecksPermitidos;
     
@@ -41,10 +43,11 @@ public class HubDTO
         
     }
     
-    public HubDTO(String id, int healthChecksPermitidos)
+    public HubDTO(String id, int healthChecksPermitidos, String cerradura)
     {
         this.id = id;
         this.healthChecksPermitidos = healthChecksPermitidos;
+        this.cerradura=cerradura;
     }
 
     /**
@@ -73,6 +76,20 @@ public class HubDTO
      */
     public void setHealthChecksPermitidos(int healthChecksPermitidos) {
         this.healthChecksPermitidos = healthChecksPermitidos;
+    }
+
+    /**
+     * @return the cerradura
+     */
+    public String getCerradura() {
+        return cerradura;
+    }
+
+    /**
+     * @param cerradura the cerradura to set
+     */
+    public void setCerradura(String cerradura) {
+        this.cerradura = cerradura;
     }
     
 }

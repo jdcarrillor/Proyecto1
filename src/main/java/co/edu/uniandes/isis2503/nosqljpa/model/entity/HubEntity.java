@@ -43,13 +43,16 @@ public class HubEntity implements Serializable
     
     private int healthChecksPermitidos;
     
+    private String cerradura;
+    
     
     public HubEntity() {
        
     }
 
-    public HubEntity(String id, int healthChecksPermitidos) {
+    public HubEntity(String id, int healthChecksPermitidos, String cerradura) {
         this.id = id;
+        this.cerradura = cerradura;
         this.healthChecksPermitidos = healthChecksPermitidos;
        
     }
@@ -80,6 +83,20 @@ public class HubEntity implements Serializable
      */
     public void setHealthChecksPermitidos(int healthChecksPermitidos) {
         this.healthChecksPermitidos = healthChecksPermitidos;
+    }
+
+    /**
+     * @return the cerradura
+     */
+    public String getCerradura() {
+        return cerradura;
+    }
+
+    /**
+     * @param cerradura the cerradura to set
+     */
+    public void setCerradura(String cerradura) {
+        this.cerradura = cerradura;
     }
     
 }

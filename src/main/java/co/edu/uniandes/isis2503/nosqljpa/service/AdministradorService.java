@@ -80,7 +80,7 @@ public class AdministradorService {
     @Path("{id}/alarmas")
     public AlarmaDTO addRoom(@PathParam("id") String id, AlarmaDTO dto) {
         AdministradorDTO floor = administradorLogic.find(id);
-        floor.addtAlarmas(dto.getNombre());
+        floor.addtAlarmas(dto);
         AlarmaDTO resul= alarmaLogic.add(dto);
         resul.setAdmin(floor.getId());
         administradorLogic.update(floor);
@@ -103,7 +103,7 @@ public class AdministradorService {
 
     @GET
     @Path("{id}/alarmas")
-    public List<String> addRoom(@PathParam("id") String id) {
+    public List<AlarmaDTO> addRoom(@PathParam("id") String id) {
         AdministradorDTO admin = administradorLogic.find(id);
         
         return (admin.getAlarmas());
@@ -130,7 +130,7 @@ public class AdministradorService {
             administradorLogic.delete(id);
             return Response.status(200).header("Access-Control-Allow-Origin", "*").entity("Sucessful: Administrador was deleted").build();
         } catch (Exception e) {
-            Logger.getLogger(FloorService.class).log(Level.WARNING, e.getMessage());
+            Logger.getLogger(AdministradorService.class).log(Level.WARNING, e.getMessage());
             return Response.status(500).header("Access-Control-Allow-Origin", "*").entity("We found errors in your query, please contact the Web Admin.").build();
         }
     }

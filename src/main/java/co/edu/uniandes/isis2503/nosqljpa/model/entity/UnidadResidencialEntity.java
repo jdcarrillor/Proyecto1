@@ -23,6 +23,7 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.model.entity;
 
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.UnidadResidencialDTO;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -183,6 +184,26 @@ public class UnidadResidencialEntity implements Serializable {
     public void setCentralYale(String centralYale) {
         this.centralYale = centralYale;
     }
+    
+    
+    
+    
+    public UnidadResidencialDTO entityToDTO()
+    {
+        UnidadResidencialDTO dto = new UnidadResidencialDTO();
+        dto.setId(this.getId());
+        dto.setNombre(this.getNombre());
+        dto.setDireccion(this.getDireccion());
+        dto.setEstrato(this.getEstrato());
+        dto.setBarrio(this.getBarrio());
+        dto.setResidencias(this.getResidencias());
+        dto.setAdministrador(this.getAdministrador());
+        dto.setCentralYale(this.getCentralYale());
+        
+        return dto;
+    }
+    
+   
     
     
 }

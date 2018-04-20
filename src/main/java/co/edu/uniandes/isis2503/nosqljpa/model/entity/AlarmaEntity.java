@@ -23,6 +23,7 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.model.entity;
 
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.AlarmaDTO;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
@@ -167,5 +168,7 @@ public class AlarmaEntity implements Serializable
     public void setPropietario(String propietario) {
         this.propietario = propietario;
     }
+    
+    
     
 }

@@ -23,17 +23,17 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.service;
 
-import co.edu.uniandes.isis2503.nosqljpa.interfaces.IFloorLogic;
+
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.IResidenciaLogic;
-import co.edu.uniandes.isis2503.nosqljpa.interfaces.IRoomLogic;
+
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.IUnidadResidencialLogic;
-import co.edu.uniandes.isis2503.nosqljpa.logic.FloorLogic;
+
 import co.edu.uniandes.isis2503.nosqljpa.logic.ResidenciaLogic;
-import co.edu.uniandes.isis2503.nosqljpa.logic.RoomLogic;
+
 import co.edu.uniandes.isis2503.nosqljpa.logic.UnidadResidencialLogic;
-import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.FloorDTO;
+
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.ResidenciaDTO;
-import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.RoomDTO;
+
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.UnidadResidencialDTO;
 import com.sun.istack.logging.Logger;
 import java.util.List;
@@ -102,7 +102,7 @@ public class UnidadResidencialService {
             unidadResidencialLogic.delete(id);
             return Response.status(200).header("Access-Control-Allow-Origin", "*").entity("Sucessful: Unidad Residencial was deleted").build();
         } catch (Exception e) {
-            Logger.getLogger(FloorService.class).log(Level.WARNING, e.getMessage());
+            Logger.getLogger(AdministradorService.class).log(Level.WARNING, e.getMessage());
             return Response.status(500).header("Access-Control-Allow-Origin", "*").entity("We found errors in your query, please contact the Web Admin.").build();
         }
     }

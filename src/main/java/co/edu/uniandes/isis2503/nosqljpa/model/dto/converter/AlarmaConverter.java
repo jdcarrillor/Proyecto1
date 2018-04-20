@@ -48,6 +48,8 @@ public class AlarmaConverter implements IAlarmaConverter {
         dto.setTipo(entity.getTipo());
         dto.setFecha(entity.getFecha());
         dto.setAdmin(entity.getAdmin());
+        dto.setCentral(entity.getCentral());
+        dto.setPropietario(entity.getPropietario());
         return dto;
     }
 
@@ -59,6 +61,8 @@ public class AlarmaConverter implements IAlarmaConverter {
         entity.setTipo(dto.getTipo());
         entity.setFecha(dto.getFecha());
         entity.setAdmin(dto.getAdmin());
+        entity.setCentral(dto.getCentral());
+        entity.setPropietario(dto.getPropietario());
         return entity;
         
     }

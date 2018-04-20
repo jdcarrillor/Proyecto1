@@ -46,6 +46,7 @@ public class CentralYaleConverter implements ICentralYaleConverter {
         dto.setId(entity.getId());
         dto.setNombre(entity.getNombre());
         dto.setUnidadesResidenciales(entity.getUnidadesResidenciales());
+        dto.setAlarmas(entity.getAlarmas());
         return dto;
     }
 
@@ -55,6 +56,7 @@ public class CentralYaleConverter implements ICentralYaleConverter {
         entity.setId(dto.getId());
         entity.setNombre(dto.getNombre());
         entity.setUnidadesResidenciales(dto.getUnidadesResidenciales());
+        entity.setAlarmas(dto.getAlarmas());
         return entity;
     }
 
